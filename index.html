@@ -1,0 +1,188 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Melody - Music Player</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS File -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="player-container">
+
+        <!-- Header -->
+        <header class="player-header">
+            <h2>♫ Melody</h2>
+            <span class="live-badge">YOUR MUSIC</span>
+        </header>
+
+        <!-- Album Artwork -->
+        <section class="album-section">
+            <div class="album-art">
+                <img
+                    id="cover"
+                    src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=600"
+                    alt="Album artwork"
+                >
+            </div>
+
+            
+        <!-- Animated Music Visualizer -->
+        <div class="visualizer" id="visualizer" aria-label="Music visualizer">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+
+            <h1 id="song-title">Midnight Dreams</h1>
+            <p id="artist-name">Your Favorite Artist</p>
+
+            <button id="favorite-btn" class="favorite-btn" aria-label="Add to favorites">
+                ♡
+            </button>
+        </section>
+
+        <!-- Progress Bar -->
+        <section class="progress-section">
+            <div class="progress-bar-container">
+                <span id="current-time">0:00</span>
+
+                <input
+                    type="range"
+                    id="progress"
+                    min="0"
+                    max="100"
+                    value="0"
+                    aria-label="Seek through song"
+                >
+
+                <span id="duration">0:00</span>
+            </div>
+        </section>
+
+        <!-- Audio Element -->
+        <audio id="audio"></audio>
+
+        <!-- Main Controls -->
+        <section class="controls">
+            <button id="shuffle-btn" class="side-control" aria-label="Shuffle" title="Shuffle">
+                ⇄
+            </button>
+
+            <button id="prev-btn" class="side-control" aria-label="Previous song" title="Previous">
+                |◀
+            </button>
+
+            <button id="play-btn" class="play-btn" aria-label="Play">
+                ▶
+            </button>
+
+            <button id="next-btn" class="side-control" aria-label="Next song" title="Next">
+                ▶|
+            </button>
+
+            <button id="repeat-btn" class="side-control" aria-label="Repeat" title="Repeat">
+                ↻
+            </button>
+        </section>
+
+        <!-- Volume Control -->
+        <section class="volume-section">
+            <button id="mute-btn" aria-label="Mute" title="Mute or unmute">
+                🔊
+            </button>
+
+            <input
+                type="range"
+                id="volume"
+                min="0"
+                max="1"
+                step="0.01"
+                value="0.7"
+                aria-label="Volume"
+            >
+
+            <span id="volume-value">70%</span>
+        </section>
+
+        <!-- Playlist -->
+        <section class="playlist-section">
+            <div class="playlist-heading">
+                <h3>Up Next</h3>
+                <span id="song-count">3 songs</span>
+            </div>
+
+        
+        <div class="search-box">
+            <input
+                type="search"
+                id="song-search"
+                placeholder="Search songs or artists..."
+                aria-label="Search songs or artists"
+            >
+            <button
+                id="clear-search"
+                type="button"
+                aria-label="Clear search"
+            >×</button>
+        </div>
+
+        <div class="playlist-filters">
+       <button id="all-songs-btn" class="filter-btn active">
+        All Songs
+       </button>
+
+        <button id="favorites-filter-btn" class="filter-btn">
+        ♥ Favorites
+        </button>
+        </div>
+
+        
+        <div class="recently-played-section">
+            <div class="recently-played-header">
+                <h3>Recently Played</h3>
+                <button id="clear-history-btn" type="button">
+                    Clear History
+                </button>
+            </div>
+
+            <div id="recently-played-list"></div>
+        </div>
+
+
+        <div id="playlist" class="playlist"></div>
+
+        </section>
+
+        <footer>
+            Made with <span>♥</span> for music lovers
+        </footer>
+
+    </main>
+
+    <!-- JavaScript File -->
+    <script src="script.js"></script>
+
+</body>
+</html>
